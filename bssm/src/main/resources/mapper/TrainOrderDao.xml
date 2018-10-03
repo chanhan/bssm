@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 设置为IUserDao接口方法提供sql语句配置 -->
+<mapper namespace="test.bssm.dao.ITrainOrderDao">
+
+    <resultMap id="trainOrderMap" type="test.bssm.domain.TrainOrder" >
+        <id column="TOId" property="id" jdbcType="INTEGER" />
+        <result column="TOSerialId" property="serialId" jdbcType="VARCHAR" />
+        <result column="TOTrainNo" property="trainNo" jdbcType="VARCHAR" />
+        <result column="TOStartStationName" property="startStationName" jdbcType="VARCHAR" />
+        <result column="TOEndStationName" property="endStationName" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="queryTrainOrder" resultMap="trainOrderMap" parameterType="java.lang.String">
+        SELECT TOId,TOSerialId,TOTrainNo,TOStartStationName,TOEndStationName FROM TrainOrder WHERE TOSerialId = #{serialId}
+    </select>
+</mapper>

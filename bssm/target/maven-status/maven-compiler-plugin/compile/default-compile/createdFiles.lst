@@ -1,0 +1,5 @@
+test\bssm\dao\ITrainOrderDao.class
+test\bssm\web\TrainOrderController.class
+test\bssm\service\ITrainOrderService.class
+test\bssm\service\impl\TrainOrderService.class
+test\bssm\domain\TrainOrder.class
